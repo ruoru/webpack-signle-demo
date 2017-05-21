@@ -1,0 +1,27 @@
+{
+  "name": "webpack-signle-demo",
+  "version": "1.0.0",
+  "description": "muke webpack learn 2,single page.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --config webpack.config.js --progress --colors --display-modules --display-reasons",
+    "build": "webpack -p"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ruoru/webpack-signle-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ruoru/webpack-signle-demo/issues"
+  },
+  "homepage": "https://github.com/ruoru/webpack-signle-demo#readme",
+  "devDependencies": {
+    "css-loader": "^0.28.1",
+    "html-webpack-plugin": "^2.28.0",
+    "style-loader": "^0.17.0",
+    "webpack": "^2.5.1"
+  }
+}
