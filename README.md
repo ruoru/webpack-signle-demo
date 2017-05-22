@@ -25,7 +25,7 @@ npm install webpack-dev-server --save-dev
 >全局安装之后，才可以使用webpack命令。
 >局部安装，为了保存到package.json文件中。
 
-5. 依据项目所需安装依赖
+5. 依据项目所需安装依赖  
 开发依赖： `css-loader` `style-loader` `html-webpack-plugin` `vue-loader` `babel-loader` `babel-core` `babel-preset-es2015`
 ```
 npm install babel-core --save-dev
