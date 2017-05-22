@@ -3,6 +3,7 @@
 
 #忽略node_modules目录下的所有文件
 node_modules
+lib
 npm-debug.log
 
 #仅仅忽略 demo/.svn文件
