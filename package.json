@@ -19,6 +19,9 @@
   },
   "homepage": "https://github.com/ruoru/webpack-signle-demo#readme",
   "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-latest": "^6.24.1",
     "css-loader": "^0.28.1",
     "html-webpack-plugin": "^2.28.0",
     "style-loader": "^0.17.0",
