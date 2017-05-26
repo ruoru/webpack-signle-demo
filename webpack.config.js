@@ -1,7 +1,7 @@
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: '.src/app.js',
+    entry: './src/app.js',
     output: {
         path: __dirname + '/lib',
         filename: 'js/[name].bundle.js',
@@ -10,7 +10,7 @@ module.exports = {
         loaders: [
             {
                 test: /\.js$/,
-                loader: 'babel',
+                loader: 'babel-loader',
             },
         ],
     },
