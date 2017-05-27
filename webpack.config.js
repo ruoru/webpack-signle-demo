@@ -21,8 +21,6 @@ module.exports = {
             //处理css文件
             {
                 test: /\.css$/,
-                //loader: 'style-loader!css-loader!postcss-loader',    //这种写法与下面写法效果一直，执行顺序由数组尾部开始
-                //loaders: ['style-loader','css-loader','postcss-loader'],    //css-loader处理完之后，style-loader会加一个style标签
                 use: [
                     'style-loader',
                     {
@@ -35,10 +33,55 @@ module.exports = {
                         loader: 'postcss-loader',
                         options: {
                             plugins: [
+                                //require('autoprefixer')
                             ]
                         }
                     },
                 ]
+            },
+            {
+                test: /\.html$/,
+                use: [
+                    'html-loader'
+                ]
+            },
+            {
+                test: /\.tpl$/,
+                use: [
+                    'ejs-loader'
+                ]
+            },
+            {
+                test: /\.less$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                //require('autoprefixer')
+                            ]
+                        }
+                    },
+                    'less-loader',
+                ],
+            },
+            {
+                test: /\.scss$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: [
+                                //require('autoprefixer')
+                            ]
+                        }
+                    },
+                    'sass-loader',
+                ],
             },
         ],
     },

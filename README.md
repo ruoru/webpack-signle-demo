@@ -81,3 +81,6 @@ module.exports = {
 npm run dev    //运行dev server
 npm run build    //来打包和压缩代码
 ```
+
+# 备注
+![优化创建时间](doc/01.png)
