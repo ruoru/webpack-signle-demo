@@ -1,3 +1,4 @@
+const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -49,7 +50,7 @@ module.exports = {
                 test: /\.tpl$/,
                 use: [
                     'ejs-loader'
-                ]
+                ],
             },
             {
                 test: /\.less$/,
@@ -83,6 +84,27 @@ module.exports = {
                     'sass-loader',
                 ],
             },
+            {
+                test: /\.(jpg|png|jpeg|gif|svg)$/i,
+                use: [
+                    // {
+                    //     loader: 'file-loader',
+                    //     query: {
+                    //         name: 'assets/[name]-[hash:5].[ext]'
+                    //     }
+                    // },
+                    {
+                        loader: 'url-loader',
+                        query: {
+                            limit: 100000,    //设定最小值，小与最小值可图片被打包成dataURL base64编码
+                            name: 'assets/[name].[ext]'
+                        }
+                    },
+                    {
+                        loader: 'image-webpack-loader'
+                    },
+                ],
+            },
         ],
     },
     plugins: [
@@ -92,5 +114,13 @@ module.exports = {
             inject: "body",
             title: 'app',
         }),
-    ]
+    ],
+    devServer: {
+        contentBase: path.join(__dirname, "lib"),
+        compress: true,    //启用所有服务的gzip压缩
+        host: '0.0.0.0',
+        port: 8001,
+        lazy: true,    //当lazy启用时，当它被请求的DEV-服务器将只编译软件包。这意味着webpack不会看到任何文件更改。我们称这个懒惰模式。
+        //filename: "[name].bundle.js",    ///[name].bundle.js请求时才编译 。filename在没有延迟模式的情况下使用时不起作用。
+    },
 };
